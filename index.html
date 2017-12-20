@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Js-HotCold</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="jeu">
+      <h2>JEU EXO JAVASCRIPT - HotCold (Plus / Moins)</h2>
+      <p>Le but de ce jeu est simple ​ : L’ordinateur choisit un nombre entre 1 et 100. <br>
+      A vous, Joueur, de trouver lequel !<br>
+      Pour vous aider, vous trouverez des indications :</p>
+      <p class="rouge" >si “ + C'EST PLUS ! +"</p>
+      <p class= "bleu" >ou si "- C'EST MOINS ! -"</p>
+      <p> Vous trouverez aussi le nombre de coup qu'il vous à fallu ! <br>
+      let's GO !</p>
+      <input type="text" class="selection" name="" value="">
+      <button type="button" name="button">Envoyé !</button>
+    </div>
+
+    <div class="indication">
+      "affichage pour indication + OU - "
+    </div>
+
+    <script>
+
+      var nb_ordi = Math.floor(Math.random()*100);
+      console.log("l'ordi à choisi au hazar " + nb_ordi);
+
+      var nb_saisi = [1, 100]
+      console.log("le chiffre du joueur est" + nb_saisi);
+
+      var nb_tour = 0;      //nb de tour pour le trouver.
+      var bouton = document.getElementById("button");
+
+      do {
+        var nb_saisi = prompt("Choisissez un nombre entre 1 et 100 :");
+
+        if (nb_saisi < nb_ordi){
+          document.write("+ C'EST PLUS ! + <br/>");
+
+        }
+        else if (nb_saisi > nb_ordi){
+          document.write("- C'EST MOINS ! - <br/>");
+        }
+        else {
+          document.write("JACKPOT c'est le bon nombre ! <br/>");
+        }
+
+      } while (nb_saisi != nb_ordi);
+
+
+    </script>
+  </body>
+</html>
